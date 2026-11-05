@@ -1,0 +1,80 @@
+#author Cornelis de Plaa
+#@outflank.nl
+
+beacon_command_register("AddDnsRecords", "Add a DNS resource record to the Active Directory domain (ADIDNS).",
+    "Synopsis: AddDnsRecords [host.example.local] [A (or AAAA for IPv6)] [100.100.10.10 (or 2001:1111:2222:3::1)] [opt ttl: 1800 (default 360)]\n\n" .
+    "Use DnsModifyRecordsInSet to add DNS resource records.\n");
+
+beacon_command_register("DeleteDnsRecords", "Delete a DNS resource record from the Active Directory domain (ADIDNS).",
+    "Synopsis: DeleteDnsRecords [host.example.local] [A (or AAAA for IPv6)] [100.100.10.10 (or 2001:1111:2222:3::1)]\n\n" .
+    "Use DnsModifyRecordsInSet to delete DNS resource records.\n");
+
+
+alias AddDnsRecords {
+	$bid = $1;
+
+    $input = substr($0, 14);
+    @args = split(' ', $input);
+
+    $record = @args[0];
+    $type = @args[1];
+    $ip = @args[2];
+    $ttl = @args[3];
+
+	if ($record eq "") {
+		berror($bid, "Please specify a DNS record to add.");
+		return;
+	}
+
+    if ($type eq "") {
+		berror($bid, "Please specify a record type (A or AAAA).");
+		return;
+	}
+
+    if ($ip eq "") {
+		berror($bid, "Please specify a IP or IPv6 address.");
+		return;
+	}
+
+	# Read in the right BOF file
+    $handle = openf(script_resource("AddDnsRecords." . barch($bid) . ".o"));
+    $data   = readb($handle, -1);
+    closef($handle);
+
+	$arg_data  = bof_pack($bid, "ZZZZi", "add", $record, $type, $ip, $ttl);
+	beacon_inline_execute($bid, $data, "go", $arg_data);
+}
+
+alias DeleteDnsRecords {
+	$bid = $1;
+
+    $input = substr($0, 17);
+    @args = split(' ', $input);
+
+    $record = @args[0];
+    $type = @args[1];
+    $ip = @args[2];
+
+	if ($record eq "") {
+		berror($bid, "Please specify a DNS record to add.");
+		return;
+	}
+
+    if ($type eq "") {
+		berror($bid, "Please specify a record type (A or AAAA).");
+		return;
+	}
+
+    if ($ip eq "") {
+		berror($bid, "Please specify a IP or IPv6 address.");
+		return;
+	}
+
+	# Read in the right BOF file
+    $handle = openf(script_resource("AddDnsRecords." . barch($bid) . ".o"));
+    $data   = readb($handle, -1);
+    closef($handle);
+
+	$arg_data  = bof_pack($bid, "ZZZZ", "del", $record, $type, $ip);
+	beacon_inline_execute($bid, $data, "go", $arg_data);
+}

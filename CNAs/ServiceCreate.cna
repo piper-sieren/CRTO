@@ -1,0 +1,83 @@
+#author Cornelis de Plaa
+#@outflank.nl
+
+beacon_command_register("ServiceCreate", "Creates a service object and adds it to the service control manager database.",
+	"Synopsis: ServiceCreate [Hostname <or localhost>] [ServiceName] [ServiceDescription] [ServiceCommand] \n" .
+	"          ServiceCreate localhost EdrXDriverSvc \"EdrX Driver Service\" C:\\Somewhere\\EdrSvc.exe \n\n");
+
+beacon_command_register("ServiceStart", "Start a service object.",
+	"Synopsis: ServiceStart [Hostname <or localhost>] [ServiceName] \n" .
+	"          ServiceStart localhost EdrXDriverSvc \n\n");
+
+beacon_command_register("ServiceDelete", "Delete a service from the service control manager database.",
+	"Synopsis: ServiceDelete [Hostname <or localhost>] [ServiceName] \n" .
+	"          ServiceDelete localhost EdrXDriverSvc \n\n");
+
+alias ServiceCreate {
+	$bid = $1;
+	$host = iff($2 eq "localhost", "localhost", $2);
+	$service = $3;
+	$displayname = $4;
+	$command = $5;
+	
+	if ($service eq "") {
+		berror($bid, "Please specify a service name.");
+		return;
+	}
+
+	if ($displayname eq "") {
+		berror($bid, "Please specify a service display name.");
+		return;
+	}
+
+	if ($command eq "") {
+		berror($bid, "Please specify a service command.");
+		return;
+	}
+
+	# Read in the right BOF file
+	$handle = openf(script_resource("CreateService." . barch($bid) . ".o"));
+	$data   = readb($handle, -1);
+	closef($handle);
+
+	$arg_data  = bof_pack($bid, "ZZZZZ", "create", $host, $service, $displayname, $command);
+	beacon_inline_execute($bid, $data, "go", $arg_data);
+}
+
+alias ServiceStart {
+	$bid = $1;
+	$host = iff($2 eq "localhost", "localhost", $2);
+	$service = $3;
+	
+	if ($service eq "") {
+		berror($bid, "Please specify a service name.");
+		return;
+	}
+
+	# Read in the right BOF file
+	$handle = openf(script_resource("CreateService." . barch($bid) . ".o"));
+	$data   = readb($handle, -1);
+	closef($handle);
+
+	$arg_data  = bof_pack($bid, "ZZZ", "start", $host, $service);
+	beacon_inline_execute($bid, $data, "go", $arg_data);
+}
+
+alias ServiceDelete {
+	$bid = $1;
+	$host = iff($2 eq "localhost", "localhost", $2);
+	$service = $3;
+	
+	if ($service eq "") {
+		berror($bid, "Please specify a service name.");
+		return;
+	}
+
+	# Read in the right BOF file
+	$handle = openf(script_resource("CreateService." . barch($bid) . ".o"));
+	$data   = readb($handle, -1);
+	closef($handle);
+
+	$arg_data  = bof_pack($bid, "ZZZ", "delete", $host, $service);
+	beacon_inline_execute($bid, $data, "go", $arg_data);
+}
